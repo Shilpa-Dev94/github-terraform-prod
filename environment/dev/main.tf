@@ -29,7 +29,7 @@ module "nic" {
   source = "../../modules/azurerm_nic"
 
   nics = {
-    for k, v in var.dev_nics : k => {
+    for k, v in var.nics : k => {
       name                 = v.name
       resource_group_name  = v.resource_group_name
       location             = v.location
