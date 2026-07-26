@@ -25,7 +25,7 @@ dev_subnets = {
   }
 }
 
-pips = {
+dev_pips = {
   pip1 = {
     name                = "dev-public-ip"
     resource_group_name = "dev-rg"

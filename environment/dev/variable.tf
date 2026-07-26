@@ -25,7 +25,8 @@ variable "dev_subnets" {
   }))
 }
 
-variable "pips" {
+variable "dev_pips" {
+  description = "Public IP configurations for dev environment"
   type = map(object({
     name                = string
     resource_group_name = string
