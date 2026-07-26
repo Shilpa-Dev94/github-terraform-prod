@@ -41,8 +41,8 @@ jobs:
         run: terraform init
 
       - name: Terraform Plan
-        run: terraform plan -lock=false -input=false
+        run: terraform plan -lock=false -input=false -var-file="terraform.tfvars"
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve -lock=false -input=false
+        run: terraform apply -auto-approve -lock=false -input=false -var-file="terraform.tfvars"

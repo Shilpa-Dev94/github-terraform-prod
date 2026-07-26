@@ -25,14 +25,13 @@ dev_subnets = {
   }
 }
 
-dev_pips = {
-  "pip1" = {
-    name                = "pip-dev-vm-eastus"
-    resource_group_name = "rg-dev-app-eastus"
-    location            = "East US"
+pips = {
+  pip1 = {
+    name                = "dev-public-ip"
+    resource_group_name = "dev-rg"
+    location            = "eastus"
     allocation_method   = "Static"
-    sku                 = "Standard" # <--- Mandatory for new Azure Public IPs
-    tags                = { Environment = "Dev" }
+    sku                 = "Standard"
   }
 }
 
