@@ -7,7 +7,7 @@ resource "azurerm_storage_account" "sa" {
   account_replication_type = each.value.account_replication_type
 
   min_tls_version          = "TLS1_2"
-  enable_https_traffic_only = true
+  https_traffic_only_enabled = true
 
   tags = each.value.tags
 }

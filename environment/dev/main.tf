@@ -22,6 +22,7 @@ module "subnet" {
 module "public_ip" {
   source = "../../modules/azurerm_public_ip"
   pips   = var.dev_pips
+  depends_on = [module.resource_group] 
 }
 
 # 5. Network Interface Module
