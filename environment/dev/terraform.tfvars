@@ -31,6 +31,7 @@ dev_pips = {
     resource_group_name = "rg-dev-app-eastus"
     location            = "East US"
     allocation_method   = "Static"
+    sku                 = "Standard" # <--- Mandatory for new Azure Public IPs
     tags                = { Environment = "Dev" }
   }
 }
