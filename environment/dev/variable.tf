@@ -25,25 +25,28 @@ variable "dev_subnets" {
   }))
 }
 
-variable "pips" {
+variable "dev_pips" {
+  description = "Public IP configurations for dev environment"
   type = map(object({
     name                = string
     resource_group_name = string
     location            = string
     allocation_method   = string
-    sku                 = optional(string, "Standard") # <--- Optional SKU added
+    sku                 = optional(string, "Standard")
     tags                = map(string)
   }))
 }
 
-variable "dev_nics" {
+variable "nics" {
   type = map(object({
-    name                 = string
-    resource_group_name  = string
-    location             = string
-    subnet_key           = string
-    pip_key              = string
-    tags                 = map(string)
+    name                = string
+    resource_group_name = string
+    location            = string
+    subnet_key          = optional(string)
+    pip_key             = optional(string)
+    subnet_id           = optional(string)
+    public_ip_address_id = optional(string)
+    tags                = map(string)
   }))
 }
 

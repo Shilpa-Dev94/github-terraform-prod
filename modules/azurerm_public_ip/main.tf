@@ -4,6 +4,6 @@ resource "azurerm_public_ip" "pip" {
   resource_group_name = each.value.resource_group_name
   location            = each.value.location
   allocation_method   = each.value.allocation_method
-  sku                 = lookup(each.value, "sku", "Standard") # <--- Yaha fix kiya hai (Default Standard rakha hai)
+  sku                 = lookup(each.value, "sku", "Standard")
   tags                = each.value.tags
 }

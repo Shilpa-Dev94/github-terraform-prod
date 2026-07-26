@@ -20,9 +20,8 @@ module "subnet" {
 
 # 4. Public IP Module
 module "public_ip" {
-  source     = "../../modules/azurerm_public_ip"
-  pips       = var.dev_pips
-  depends_on = [module.resource_group]
+  source = "../../modules/azurerm_public_ip"
+  pips   = var.dev_pips
 }
 
 # 5. Network Interface Module
@@ -30,7 +29,7 @@ module "nic" {
   source = "../../modules/azurerm_nic"
 
   nics = {
-    for k, v in var.dev_nics : k => {
+    for k, v in var.nics : k => {
       name                 = v.name
       resource_group_name  = v.resource_group_name
       location             = v.location
