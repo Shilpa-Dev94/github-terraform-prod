@@ -32,10 +32,11 @@ pips = {
     location            = "eastus"
     allocation_method   = "Static"
     sku                 = "Standard"
+    tags                = { Environment = "Dev" }
   }
 }
 
-dev_nics = {
+nics = {
   "nic1" = {
     name                = "nic-dev-vm-eastus"
     resource_group_name = "rg-dev-app-eastus"

@@ -4,7 +4,7 @@ variable "pips" {
     resource_group_name = string
     location            = string
     allocation_method   = string
-    sku                 = optional(string, "Standard") # <--- Optional SKU added
+    sku                 = optional(string, "Standard")
     tags                = map(string)
   }))
 }
